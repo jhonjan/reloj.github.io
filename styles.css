@@ -1,0 +1,118 @@
+/* Contenedor principal del reloj */
+.clock {
+    width: 340px;  /* Ancho del reloj */
+    height: 340px; /* Alto del reloj */
+    background-color: #f0f0f0; /* Color de fondo gris claro */
+    border-radius: 50%; /* Hace el reloj circular */
+    border: 2px solid #333; /* Borde del reloj */
+    position: relative; /* Para posicionamiento de elementos internos */
+    margin: 50px auto; /* Centrar el reloj en la página */
+}
+
+/* Punto central del reloj */
+.center-point {
+    background-color: #333; /* Color negro del punto central */
+    width: 12px;  /* Tamaño del punto central */
+    height: 12px;
+    position: absolute;
+    top: 50%; /* Centrar verticalmente */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translate(-50%, -50%); /* Ajuste fino del centrado */
+    border-radius: 50%; /* Hacer el punto circular */
+}
+
+/* Estilos base para todas las manecillas */
+.hand {
+    position: absolute;
+    bottom: 50%; /* Punto de origen en el centro */
+    left: 50%;
+    transform-origin: bottom; /* Punto de rotación en la base */
+    border-radius: 4px; /* Bordes redondeados de las manecillas */
+}
+
+/* Manecilla de las horas */
+.hour {
+    width: 2px;
+    height: 25%;
+    background-color: transparent;
+    transform-origin: 50% 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Números en la manecilla de horas */
+.hour span {
+    color: #333;
+    font-size: 12px;
+    line-height: 1;
+    transform: rotate(180deg);
+    margin: 0.5px 0;
+}
+
+/* Manecilla de los minutos */
+.minute {
+    width: 2px;
+    height: 35%;  /* Reducido de 60% a 35% */
+    background-color: transparent;
+    transform-origin: 50% 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; /* Cambiado de flex-start a flex-end */
+}
+
+/* Números en la manecilla de minutos */
+.minute span {
+    color: #666;
+    font-size: 12px;
+    line-height: 1;
+    transform: rotate(180deg); /* Volviendo a 180deg */
+    margin: 0.5px 0;
+}
+
+/* Manecilla de los segundos */
+.second {
+    width: 2px;
+    height: 30%;  /* Reducido de 60% a 45% */
+    background-color: transparent;
+    transform-origin: 50% 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; /* Cambiado de flex-start a flex-end */
+}
+
+/* Números en la manecilla de segundos */
+.second span {
+    color: #f00;
+    font-size: 12px;
+    line-height: 1;
+    transform: rotate(180deg);
+    margin: 0.5px 0;
+}
+
+/* Estilo base para los números del reloj */
+.number {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center; /* Centrar los números */
+    transform: rotate(var(--rotation)); /* Rotar según la variable personalizada */
+    font-size: 1.4rem;
+}
+
+/* Rotación específica para cada número del reloj */
+.number1 { --rotation: 30deg; }  /* 30 grados por cada hora */
+.number2 { --rotation: 60deg; }
+.number3 { --rotation: 90deg; }
+.number4 { --rotation: 120deg; }
+.number5 { --rotation: 150deg; }
+.number6 { --rotation: 180deg; }
+.number7 { --rotation: 210deg; }
+.number8 { --rotation: 240deg; }
+.number9 { --rotation: 270deg; }
+.number10 { --rotation: 300deg; }
+.number11 { --rotation: 330deg; }
+.number12 { --rotation: 0deg; }
